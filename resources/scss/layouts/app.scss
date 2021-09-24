@@ -1,0 +1,184 @@
+*
+{
+    margin     : 0;
+    padding    : 0;
+    box-sizing : border-box;
+}
+
+body
+{
+    min-height : 100vh;
+    background : $main-color-muted;
+}
+
+.navbar
+{
+    position   : fixed;
+    width      : 300px;
+    top        : 0;
+    bottom     : 0;
+    left       : 0;
+    box-sizing : initial;
+    background : $main-color-muted;
+    transition : .5s;
+    overflow-x : hidden;
+
+    &.wrapped
+    {
+        width : 90px;
+
+        ul li
+        {
+            margin-left : 5px;
+
+            .title
+            {
+                display : none;
+            }
+
+            b:nth-child(1), b:nth-child(2)
+            {
+                left : -5px;
+            }
+        }
+    }
+
+    ul
+    {
+        position     : absolute;
+        top          : 0;
+        left         : 0;
+        width        : 100%;
+        padding-left : 5px;
+        padding-top  : 40px;
+
+        li
+        {
+            margin-left               : 20px;
+            position                  : relative;
+            padding-left              : 25px;
+            list-style                : none;
+            width                     : 100%;
+            border-top-left-radius    : 20px;
+            border-bottom-left-radius : 20px;
+            transition                : .5s, background-color 0s;
+
+            b:nth-child(1), b:nth-child(2)
+            {
+                position   : absolute;
+                left       : -20px;
+                height     : 20px;
+                width      : 100%;
+                background : white;
+                display    : none;
+                transition : .5s;
+
+                &::before
+                {
+                    content    : '';
+                    position   : absolute;
+                    left       : 0;
+                    width      : 100%;
+                    height     : 100%;
+                    background : $main-color-muted;
+                }
+            }
+
+            b:nth-child(1)
+            {
+                top : -20px;
+
+                &::before
+                {
+                    border-bottom-right-radius : 20px;
+                    top                        : 0;
+                }
+            }
+
+            b:nth-child(2)
+            {
+                bottom : -20px;
+
+                &::before
+                {
+                    border-top-right-radius : 20px;
+                    bottom                     : 0;
+                }
+            }
+
+            &.active
+            {
+                background : white;
+
+                b:nth-child(1), b:nth-child(2)
+                {
+                    display : block;
+                }
+
+                a
+                {
+                    color : $black;
+                }
+            }
+
+            a
+            {
+                position        : relative;
+                display         : flex;
+                align-items     : center;
+                width           : 100%;
+                text-decoration : none;
+                color           : white;
+
+                .icon
+                {
+                    position     : relative;
+                    margin-right : 15px;
+                    display      : flex;
+                    align-items  : center;
+                    height       : 60px;
+                    line-height  : 60px;
+                    text-align   : center;
+
+                    ion-icon
+                    {
+                        font-size : 1.5em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.toggle
+{
+    position   : fixed;
+    top        : 20px;
+    right      : 20px;
+    width      : 50px;
+    height     : 50px;
+    background : $main-color-muted;
+    cursor     : pointer;
+
+    &.active
+    {
+        background : red;
+    }
+}
+
+.wrapper
+{
+    position                  : fixed;
+    left                      : 300px;
+    border-bottom-left-radius : 20px;
+    border-top-left-radius    : 20px;
+    background                : $white;
+    min-height                : 100vh;
+    width                     : 100vw;
+    transition                : .5s, background-color 0s;
+
+    &.wrapped
+    {
+        left : 90px;
+    }
+}

@@ -12,12 +12,15 @@
     "devDependencies": {
         "@popperjs/core": "^2.9.2",
         "@vue/compiler-sfc": "^3.2.1",
-        "autoprefixer": "^10.3.4",
+        "autoprefixer": "^10.3.5",
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.3.6",
-        "tailwindcss": "^2.2.9",
+        "postcss": "^8.3.7",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.42.1",
+        "sass-loader": "^12.1.0",
+        "tailwindcss": "^2.2.15",
         "vue-loader": "^16.4.1"
     },
     "dependencies": {
