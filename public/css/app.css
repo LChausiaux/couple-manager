@@ -10218,6 +10218,110 @@ video {
   grid-template-columns: none;
 }
 
+.hover\:grid-cols-1:hover{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.hover\:grid-cols-2:hover{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.hover\:grid-cols-3:hover{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.hover\:grid-cols-4:hover{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.hover\:grid-cols-5:hover{
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.hover\:grid-cols-6:hover{
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.hover\:grid-cols-7:hover{
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.hover\:grid-cols-8:hover{
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.hover\:grid-cols-9:hover{
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.hover\:grid-cols-10:hover{
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.hover\:grid-cols-11:hover{
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.hover\:grid-cols-12:hover{
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.hover\:grid-cols-none:hover{
+  grid-template-columns: none;
+}
+
+.focus\:grid-cols-1:focus{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.focus\:grid-cols-2:focus{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.focus\:grid-cols-3:focus{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.focus\:grid-cols-4:focus{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.focus\:grid-cols-5:focus{
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.focus\:grid-cols-6:focus{
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.focus\:grid-cols-7:focus{
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.focus\:grid-cols-8:focus{
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.focus\:grid-cols-9:focus{
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.focus\:grid-cols-10:focus{
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.focus\:grid-cols-11:focus{
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.focus\:grid-cols-12:focus{
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.focus\:grid-cols-none:focus{
+  grid-template-columns: none;
+}
+
 .grid-rows-1{
   grid-template-rows: repeat(1, minmax(0, 1fr));
 }
@@ -31892,38 +31996,49 @@ a {
 
 body {
   min-height: 100vh;
-  background: #FFD29A;
+  background: #FFFAF7;
 }
 
-.navbar {
-  position: fixed;
-  width: 300px;
+.navbar-wrapper {
+  width: 275px;
   top: 0;
   bottom: 0;
   left: 0;
+  right: 0;
+  background: #FFFAF7;
+}
+
+.navbar-wrapper .navbar {
+  width: 225px;
+  height: calc(100% - 40px);
+  margin: 20px;
+  position: fixed;
+  border-radius: 15px;
   box-sizing: initial;
-  background: #FFD29A;
+  background: #FF7857;
   transition: 0.5s;
   overflow-x: hidden;
 }
 
-.navbar.wrapped {
+.navbar-wrapper .navbar.wrapped {
   width: 90px;
 }
 
-.navbar.wrapped ul li {
+.navbar-wrapper .navbar.wrapped ul li {
   margin-left: 5px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
 
-.navbar.wrapped ul li .title {
+.navbar-wrapper .navbar.wrapped ul li .title {
   display: none;
 }
 
-.navbar.wrapped ul li b:nth-child(1), .navbar.wrapped ul li b:nth-child(2) {
+.navbar-wrapper .navbar.wrapped ul li b:nth-child(1), .navbar-wrapper .navbar.wrapped ul li b:nth-child(2) {
   left: -5px;
 }
 
-.navbar ul {
+.navbar-wrapper .navbar ul {
   position: absolute;
   top: 0;
   left: 0;
@@ -31932,86 +32047,95 @@ body {
   padding-top: 40px;
 }
 
-.navbar ul li {
-  margin-left: 20px;
+.navbar-wrapper .navbar ul .list {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
   position: relative;
-  padding-left: 25px;
+  padding-left: 30px;
   list-style: none;
-  width: 100%;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  transition: 0.5s, background-color 0s;
+  width: 85%;
+  border-radius: 20px;
+  transition: 0.4s, width 0s;
+  z-index: 999;
+  color: white;
 }
 
-.navbar ul li b:nth-child(1), .navbar ul li b:nth-child(2) {
+.navbar-wrapper .navbar ul .list b:nth-child(1), .navbar-wrapper .navbar ul .list b:nth-child(2) {
   position: absolute;
-  left: -20px;
+  left: -15px;
   height: 20px;
   width: 100%;
-  background: white;
+  background: #FFFAF7;
   display: none;
   transition: 0.5s;
 }
 
-.navbar ul li b:nth-child(1)::before, .navbar ul li b:nth-child(2)::before {
+.navbar-wrapper .navbar ul .list b:nth-child(1)::before, .navbar-wrapper .navbar ul .list b:nth-child(2)::before {
   content: "";
   position: absolute;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #FFD29A;
+  background: #FF7857;
 }
 
-.navbar ul li b:nth-child(1) {
+.navbar-wrapper .navbar ul .list b:nth-child(1) {
   top: -20px;
 }
 
-.navbar ul li b:nth-child(1)::before {
+.navbar-wrapper .navbar ul .list b:nth-child(1)::before {
   border-bottom-right-radius: 20px;
   top: 0;
 }
 
-.navbar ul li b:nth-child(2) {
+.navbar-wrapper .navbar ul .list b:nth-child(2) {
   bottom: -20px;
 }
 
-.navbar ul li b:nth-child(2)::before {
+.navbar-wrapper .navbar ul .list b:nth-child(2)::before {
   border-top-right-radius: 20px;
   bottom: 0;
 }
 
-.navbar ul li.active {
-  background: white;
+.navbar-wrapper .navbar ul .list:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.3);
+  margin-right: 10px;
 }
 
-.navbar ul li.active b:nth-child(1), .navbar ul li.active b:nth-child(2) {
+.navbar-wrapper .navbar ul .list.active {
+  width: 100%;
+  background: #FFFAF7;
+  color: #FB7053;
+  font-weight: bold;
+  z-index: 1;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.navbar-wrapper .navbar ul .list.active b:nth-child(1), .navbar-wrapper .navbar ul .list.active b:nth-child(2) {
   display: block;
 }
 
-.navbar ul li.active a {
-  color: #000;
-}
-
-.navbar ul li a {
+.navbar-wrapper .navbar ul .list a {
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
   text-decoration: none;
-  color: white;
 }
 
-.navbar ul li a .icon {
+.navbar-wrapper .navbar ul .list a .icon {
   position: relative;
-  margin-right: 15px;
+  margin-right: 25px;
   display: flex;
   align-items: center;
-  height: 60px;
-  line-height: 60px;
+  height: 45px;
+  line-height: 45px;
   text-align: center;
 }
 
-.navbar ul li a .icon ion-icon {
+.navbar-wrapper .navbar ul .list a .icon ion-icon {
   font-size: 1.5em;
 }
 
@@ -32021,7 +32145,7 @@ body {
   right: 20px;
   width: 50px;
   height: 50px;
-  background: #FFD29A;
+  background: #FF7857;
   cursor: pointer;
 }
 
@@ -32030,11 +32154,8 @@ body {
 }
 
 .wrapper {
-  position: fixed;
-  left: 300px;
-  border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
-  background: #FFF;
+  padding: 20px 20px 20px 275px;
+  background: #FFFAF7;
   min-height: 100vh;
   width: 100vw;
   transition: 0.5s, background-color 0s;
@@ -32045,12 +32166,17 @@ body {
 }
 
 .btn {
-  background: #FFB961;
-  border-radius: 10px;
+  background: #FB7053;
+  border-radius: 15px;
   padding: 10px 30px;
   box-shadow: 0 12px 35px 0 rgba(160, 121, 0, 0.2);
   color: white;
   font-size: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
 }
 
 @media (min-width: 640px){
@@ -41627,6 +41753,110 @@ body {
   }
 
   .sm\:grid-cols-none{
+    grid-template-columns: none;
+  }
+
+  .sm\:hover\:grid-cols-1:hover{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .sm\:hover\:grid-cols-2:hover{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:hover\:grid-cols-3:hover{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sm\:hover\:grid-cols-4:hover{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .sm\:hover\:grid-cols-5:hover{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .sm\:hover\:grid-cols-6:hover{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .sm\:hover\:grid-cols-7:hover{
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .sm\:hover\:grid-cols-8:hover{
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .sm\:hover\:grid-cols-9:hover{
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+
+  .sm\:hover\:grid-cols-10:hover{
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .sm\:hover\:grid-cols-11:hover{
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+  }
+
+  .sm\:hover\:grid-cols-12:hover{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .sm\:hover\:grid-cols-none:hover{
+    grid-template-columns: none;
+  }
+
+  .sm\:focus\:grid-cols-1:focus{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .sm\:focus\:grid-cols-2:focus{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:focus\:grid-cols-3:focus{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sm\:focus\:grid-cols-4:focus{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .sm\:focus\:grid-cols-5:focus{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .sm\:focus\:grid-cols-6:focus{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .sm\:focus\:grid-cols-7:focus{
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .sm\:focus\:grid-cols-8:focus{
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .sm\:focus\:grid-cols-9:focus{
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+
+  .sm\:focus\:grid-cols-10:focus{
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .sm\:focus\:grid-cols-11:focus{
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+  }
+
+  .sm\:focus\:grid-cols-12:focus{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .sm\:focus\:grid-cols-none:focus{
     grid-template-columns: none;
   }
 
@@ -72857,6 +73087,110 @@ body {
     grid-template-columns: none;
   }
 
+  .md\:hover\:grid-cols-1:hover{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .md\:hover\:grid-cols-2:hover{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:hover\:grid-cols-3:hover{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:hover\:grid-cols-4:hover{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:hover\:grid-cols-5:hover{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .md\:hover\:grid-cols-6:hover{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .md\:hover\:grid-cols-7:hover{
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .md\:hover\:grid-cols-8:hover{
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .md\:hover\:grid-cols-9:hover{
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+
+  .md\:hover\:grid-cols-10:hover{
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .md\:hover\:grid-cols-11:hover{
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+  }
+
+  .md\:hover\:grid-cols-12:hover{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .md\:hover\:grid-cols-none:hover{
+    grid-template-columns: none;
+  }
+
+  .md\:focus\:grid-cols-1:focus{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .md\:focus\:grid-cols-2:focus{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:focus\:grid-cols-3:focus{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:focus\:grid-cols-4:focus{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:focus\:grid-cols-5:focus{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .md\:focus\:grid-cols-6:focus{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .md\:focus\:grid-cols-7:focus{
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .md\:focus\:grid-cols-8:focus{
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .md\:focus\:grid-cols-9:focus{
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+
+  .md\:focus\:grid-cols-10:focus{
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .md\:focus\:grid-cols-11:focus{
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+  }
+
+  .md\:focus\:grid-cols-12:focus{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .md\:focus\:grid-cols-none:focus{
+    grid-template-columns: none;
+  }
+
   .md\:grid-rows-1{
     grid-template-rows: repeat(1, minmax(0, 1fr));
   }
@@ -104081,6 +104415,110 @@ body {
   }
 
   .lg\:grid-cols-none{
+    grid-template-columns: none;
+  }
+
+  .lg\:hover\:grid-cols-1:hover{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .lg\:hover\:grid-cols-2:hover{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:hover\:grid-cols-3:hover{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:hover\:grid-cols-4:hover{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:hover\:grid-cols-5:hover{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .lg\:hover\:grid-cols-6:hover{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .lg\:hover\:grid-cols-7:hover{
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .lg\:hover\:grid-cols-8:hover{
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .lg\:hover\:grid-cols-9:hover{
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+
+  .lg\:hover\:grid-cols-10:hover{
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .lg\:hover\:grid-cols-11:hover{
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+  }
+
+  .lg\:hover\:grid-cols-12:hover{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .lg\:hover\:grid-cols-none:hover{
+    grid-template-columns: none;
+  }
+
+  .lg\:focus\:grid-cols-1:focus{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .lg\:focus\:grid-cols-2:focus{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:focus\:grid-cols-3:focus{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:focus\:grid-cols-4:focus{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:focus\:grid-cols-5:focus{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .lg\:focus\:grid-cols-6:focus{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .lg\:focus\:grid-cols-7:focus{
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .lg\:focus\:grid-cols-8:focus{
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .lg\:focus\:grid-cols-9:focus{
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+
+  .lg\:focus\:grid-cols-10:focus{
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .lg\:focus\:grid-cols-11:focus{
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+  }
+
+  .lg\:focus\:grid-cols-12:focus{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .lg\:focus\:grid-cols-none:focus{
     grid-template-columns: none;
   }
 
@@ -135311,6 +135749,110 @@ body {
     grid-template-columns: none;
   }
 
+  .xl\:hover\:grid-cols-1:hover{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .xl\:hover\:grid-cols-2:hover{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .xl\:hover\:grid-cols-3:hover{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .xl\:hover\:grid-cols-4:hover{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .xl\:hover\:grid-cols-5:hover{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .xl\:hover\:grid-cols-6:hover{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .xl\:hover\:grid-cols-7:hover{
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .xl\:hover\:grid-cols-8:hover{
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .xl\:hover\:grid-cols-9:hover{
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+
+  .xl\:hover\:grid-cols-10:hover{
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .xl\:hover\:grid-cols-11:hover{
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+  }
+
+  .xl\:hover\:grid-cols-12:hover{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .xl\:hover\:grid-cols-none:hover{
+    grid-template-columns: none;
+  }
+
+  .xl\:focus\:grid-cols-1:focus{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .xl\:focus\:grid-cols-2:focus{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .xl\:focus\:grid-cols-3:focus{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .xl\:focus\:grid-cols-4:focus{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .xl\:focus\:grid-cols-5:focus{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .xl\:focus\:grid-cols-6:focus{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .xl\:focus\:grid-cols-7:focus{
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .xl\:focus\:grid-cols-8:focus{
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .xl\:focus\:grid-cols-9:focus{
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+
+  .xl\:focus\:grid-cols-10:focus{
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .xl\:focus\:grid-cols-11:focus{
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+  }
+
+  .xl\:focus\:grid-cols-12:focus{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .xl\:focus\:grid-cols-none:focus{
+    grid-template-columns: none;
+  }
+
   .xl\:grid-rows-1{
     grid-template-rows: repeat(1, minmax(0, 1fr));
   }
@@ -166535,6 +167077,110 @@ body {
   }
 
   .\32xl\:grid-cols-none{
+    grid-template-columns: none;
+  }
+
+  .\32xl\:hover\:grid-cols-1:hover{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .\32xl\:hover\:grid-cols-2:hover{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .\32xl\:hover\:grid-cols-3:hover{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .\32xl\:hover\:grid-cols-4:hover{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .\32xl\:hover\:grid-cols-5:hover{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .\32xl\:hover\:grid-cols-6:hover{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .\32xl\:hover\:grid-cols-7:hover{
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .\32xl\:hover\:grid-cols-8:hover{
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .\32xl\:hover\:grid-cols-9:hover{
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+
+  .\32xl\:hover\:grid-cols-10:hover{
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .\32xl\:hover\:grid-cols-11:hover{
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+  }
+
+  .\32xl\:hover\:grid-cols-12:hover{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .\32xl\:hover\:grid-cols-none:hover{
+    grid-template-columns: none;
+  }
+
+  .\32xl\:focus\:grid-cols-1:focus{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .\32xl\:focus\:grid-cols-2:focus{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .\32xl\:focus\:grid-cols-3:focus{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .\32xl\:focus\:grid-cols-4:focus{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .\32xl\:focus\:grid-cols-5:focus{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .\32xl\:focus\:grid-cols-6:focus{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .\32xl\:focus\:grid-cols-7:focus{
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .\32xl\:focus\:grid-cols-8:focus{
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .\32xl\:focus\:grid-cols-9:focus{
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+
+  .\32xl\:focus\:grid-cols-10:focus{
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .\32xl\:focus\:grid-cols-11:focus{
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+  }
+
+  .\32xl\:focus\:grid-cols-12:focus{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .\32xl\:focus\:grid-cols-none:focus{
     grid-template-columns: none;
   }
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Menu\MenuController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('menu')->name('menu.')->group(function() {
+    Route::get('/', [MenuController::class, 'index'])->name('index');
 });

@@ -8,141 +8,162 @@
 body
 {
     min-height : 100vh;
-    background : $main-color-muted;
+    background : $background;
 }
 
-.navbar
+.navbar-wrapper
 {
-    position   : fixed;
-    width      : 300px;
+    width      : 275px;
     top        : 0;
     bottom     : 0;
     left       : 0;
-    box-sizing : initial;
-    background : $main-color-muted;
-    transition : .5s;
-    overflow-x : hidden;
+    right      : 0;
+    background : $background;
 
-    &.wrapped
+    .navbar
     {
-        width : 90px;
+        width         : 225px;
+        height        : calc(100% - 40px);
+        margin        : 20px;
+        position      : fixed;
+        border-radius : $radius;
+        box-sizing    : initial;
+        background    : $main-color-muted;
+        transition    : .5s;
+        overflow-x    : hidden;
 
-        ul li
+        &.wrapped
         {
-            margin-left : 5px;
+            width : 90px;
 
-            .title
+            ul li
             {
-                display : none;
-            }
+                margin-left                : 5px;
+                border-bottom-right-radius : 0;
+                border-top-right-radius    : 0;
 
-            b:nth-child(1), b:nth-child(2)
-            {
-                left : -5px;
-            }
-        }
-    }
-
-    ul
-    {
-        position     : absolute;
-        top          : 0;
-        left         : 0;
-        width        : 100%;
-        padding-left : 5px;
-        padding-top  : 40px;
-
-        li
-        {
-            margin-left               : 20px;
-            position                  : relative;
-            padding-left              : 25px;
-            list-style                : none;
-            width                     : 100%;
-            border-top-left-radius    : 20px;
-            border-bottom-left-radius : 20px;
-            transition                : .5s, background-color 0s;
-
-            b:nth-child(1), b:nth-child(2)
-            {
-                position   : absolute;
-                left       : -20px;
-                height     : 20px;
-                width      : 100%;
-                background : white;
-                display    : none;
-                transition : .5s;
-
-                &::before
+                .title
                 {
-                    content    : '';
-                    position   : absolute;
-                    left       : 0;
-                    width      : 100%;
-                    height     : 100%;
-                    background : $main-color-muted;
+                    display : none;
                 }
-            }
-
-            b:nth-child(1)
-            {
-                top : -20px;
-
-                &::before
-                {
-                    border-bottom-right-radius : 20px;
-                    top                        : 0;
-                }
-            }
-
-            b:nth-child(2)
-            {
-                bottom : -20px;
-
-                &::before
-                {
-                    border-top-right-radius : 20px;
-                    bottom                     : 0;
-                }
-            }
-
-            &.active
-            {
-                background : white;
 
                 b:nth-child(1), b:nth-child(2)
                 {
-                    display : block;
+                    left : -5px;
+                }
+            }
+        }
+
+        ul
+        {
+            position     : absolute;
+            top          : 0;
+            left         : 0;
+            width        : 100%;
+            padding-left : 5px;
+            padding-top  : 40px;
+
+            .list
+            {
+                margin-top    : 10px;
+                margin-bottom : 10px;
+                margin-left   : 15px;
+                position      : relative;
+                padding-left  : 30px;
+                list-style    : none;
+                width         : 85%;
+                border-radius : 20px;
+                transition    : .4s, width 0s;
+                z-index       : 999;
+                color         : white;
+
+                b:nth-child(1), b:nth-child(2)
+                {
+                    position   : absolute;
+                    left       : -15px;
+                    height     : 20px;
+                    width      : 100%;
+                    background : $background;
+                    display    : none;
+                    transition : .5s;
+
+                    &::before
+                    {
+                        content    : '';
+                        position   : absolute;
+                        left       : 0;
+                        width      : 100%;
+                        height     : 100%;
+                        background : $main-color-muted;
+                    }
+                }
+
+                b:nth-child(1)
+                {
+                    top : -20px;
+
+                    &::before
+                    {
+                        border-bottom-right-radius : 20px;
+                        top                        : 0;
+                    }
+                }
+
+                b:nth-child(2)
+                {
+                    bottom : -20px;
+
+                    &::before
+                    {
+                        border-top-right-radius : 20px;
+                        bottom                  : 0;
+                    }
+                }
+
+                &:hover:not(.active)
+                {
+                    background   : $hover;
+                    margin-right : 10px;
+                }
+
+                &.active
+                {
+                    width                      : 100%;
+                    background                 : $background;
+                    color                      : $main-color;
+                    font-weight                : bold;
+                    z-index                    : 1;
+                    border-top-right-radius    : 0;
+                    border-bottom-right-radius : 0;
+
+                    b:nth-child(1), b:nth-child(2)
+                    {
+                        display : block;
+                    }
                 }
 
                 a
                 {
-                    color : $black;
-                }
-            }
+                    position        : relative;
+                    display         : flex;
+                    align-items     : center;
+                    width           : 100%;
+                    text-decoration : none;
 
-            a
-            {
-                position        : relative;
-                display         : flex;
-                align-items     : center;
-                width           : 100%;
-                text-decoration : none;
-                color           : white;
-
-                .icon
-                {
-                    position     : relative;
-                    margin-right : 15px;
-                    display      : flex;
-                    align-items  : center;
-                    height       : 60px;
-                    line-height  : 60px;
-                    text-align   : center;
-
-                    ion-icon
+                    .icon
                     {
-                        font-size : 1.5em;
+                        position     : relative;
+                        margin-right : 25px;
+                        display      : flex;
+                        align-items  : center;
+                        height       : 45px;
+                        line-height  : 45px;
+                        text-align   : center;
+
+                        ion-icon
+                        {
+                            font-size : 1.5em;
+                        }
                     }
                 }
             }
@@ -168,14 +189,11 @@ body
 
 .wrapper
 {
-    position                  : fixed;
-    left                      : 300px;
-    border-bottom-left-radius : 20px;
-    border-top-left-radius    : 20px;
-    background                : $white;
-    min-height                : 100vh;
-    width                     : 100vw;
-    transition                : .5s, background-color 0s;
+    padding    : 20px 20px 20px 275px;
+    background : $background;
+    min-height : 100vh;
+    width      : 100vw;
+    transition : .5s, background-color 0s;
 
     &.wrapped
     {
