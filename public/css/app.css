@@ -31996,49 +31996,42 @@ a {
 
 body {
   min-height: 100vh;
-  background: #FFFAF7;
+  background: #F7F6F4;
 }
 
-.navbar-wrapper {
-  width: 275px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #FFFAF7;
-}
-
-.navbar-wrapper .navbar {
-  width: 225px;
+.navbar {
   height: calc(100% - 40px);
+  position: fixed;
   margin: 20px;
   position: fixed;
+  overflow-x: hidden;
+  width: 225px;
+  margin: 20px;
   border-radius: 15px;
   box-sizing: initial;
   background: #FF7857;
   transition: 0.5s;
-  overflow-x: hidden;
 }
 
-.navbar-wrapper .navbar.wrapped {
+.navbar.wrapped {
   width: 90px;
 }
 
-.navbar-wrapper .navbar.wrapped ul li {
+.navbar.wrapped ul li {
   margin-left: 5px;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
-.navbar-wrapper .navbar.wrapped ul li .title {
+.navbar.wrapped ul li .title {
   display: none;
 }
 
-.navbar-wrapper .navbar.wrapped ul li b:nth-child(1), .navbar-wrapper .navbar.wrapped ul li b:nth-child(2) {
+.navbar.wrapped ul li b:nth-child(1), .navbar.wrapped ul li b:nth-child(2) {
   left: -5px;
 }
 
-.navbar-wrapper .navbar ul {
+.navbar ul {
   position: absolute;
   top: 0;
   left: 0;
@@ -32047,7 +32040,7 @@ body {
   padding-top: 40px;
 }
 
-.navbar-wrapper .navbar ul .list {
+.navbar ul .list {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 15px;
@@ -32061,17 +32054,17 @@ body {
   color: white;
 }
 
-.navbar-wrapper .navbar ul .list b:nth-child(1), .navbar-wrapper .navbar ul .list b:nth-child(2) {
+.navbar ul .list b:nth-child(1), .navbar ul .list b:nth-child(2) {
   position: absolute;
   left: -15px;
   height: 20px;
   width: 100%;
-  background: #FFFAF7;
+  background: #F7F6F4;
   display: none;
   transition: 0.5s;
 }
 
-.navbar-wrapper .navbar ul .list b:nth-child(1)::before, .navbar-wrapper .navbar ul .list b:nth-child(2)::before {
+.navbar ul .list b:nth-child(1)::before, .navbar ul .list b:nth-child(2)::before {
   content: "";
   position: absolute;
   left: 0;
@@ -32080,32 +32073,32 @@ body {
   background: #FF7857;
 }
 
-.navbar-wrapper .navbar ul .list b:nth-child(1) {
+.navbar ul .list b:nth-child(1) {
   top: -20px;
 }
 
-.navbar-wrapper .navbar ul .list b:nth-child(1)::before {
+.navbar ul .list b:nth-child(1)::before {
   border-bottom-right-radius: 20px;
   top: 0;
 }
 
-.navbar-wrapper .navbar ul .list b:nth-child(2) {
+.navbar ul .list b:nth-child(2) {
   bottom: -20px;
 }
 
-.navbar-wrapper .navbar ul .list b:nth-child(2)::before {
+.navbar ul .list b:nth-child(2)::before {
   border-top-right-radius: 20px;
   bottom: 0;
 }
 
-.navbar-wrapper .navbar ul .list:hover:not(.active) {
+.navbar ul .list:hover:not(.active) {
   background: rgba(255, 255, 255, 0.3);
   margin-right: 10px;
 }
 
-.navbar-wrapper .navbar ul .list.active {
+.navbar ul .list.active {
   width: 100%;
-  background: #FFFAF7;
+  background: #F7F6F4;
   color: #FB7053;
   font-weight: bold;
   z-index: 1;
@@ -32113,11 +32106,11 @@ body {
   border-bottom-right-radius: 0;
 }
 
-.navbar-wrapper .navbar ul .list.active b:nth-child(1), .navbar-wrapper .navbar ul .list.active b:nth-child(2) {
+.navbar ul .list.active b:nth-child(1), .navbar ul .list.active b:nth-child(2) {
   display: block;
 }
 
-.navbar-wrapper .navbar ul .list a {
+.navbar ul .list a {
   position: relative;
   display: flex;
   align-items: center;
@@ -32125,7 +32118,7 @@ body {
   text-decoration: none;
 }
 
-.navbar-wrapper .navbar ul .list a .icon {
+.navbar ul .list a .icon {
   position: relative;
   margin-right: 25px;
   display: flex;
@@ -32135,7 +32128,7 @@ body {
   text-align: center;
 }
 
-.navbar-wrapper .navbar ul .list a .icon ion-icon {
+.navbar ul .list a .icon ion-icon {
   font-size: 1.5em;
 }
 
@@ -32155,7 +32148,7 @@ body {
 
 .wrapper {
   padding: 20px 20px 20px 275px;
-  background: #FFFAF7;
+  background: #F7F6F4;
   min-height: 100vh;
   width: 100vw;
   transition: 0.5s, background-color 0s;
@@ -32177,6 +32170,8 @@ body {
 .card {
   background: white;
   border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 0 25px;
+  padding: 15px;
 }
 
 @media (min-width: 640px){

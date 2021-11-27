@@ -11,159 +11,149 @@ body
     background : $background;
 }
 
-.navbar-wrapper
+.navbar
 {
-    width      : 275px;
-    top        : 0;
-    bottom     : 0;
-    left       : 0;
-    right      : 0;
-    background : $background;
+    height        : calc(100% - 40px);
+    position      : fixed;
+    margin        : 20px;
+    overflow-x    : hidden;
+    width         : 225px;
+    border-radius : $radius;
+    box-sizing    : initial;
+    background    : $main-color-muted;
+    transition    : .5s;
 
-    .navbar
+    &.wrapped
     {
-        width         : 225px;
-        height        : calc(100% - 40px);
-        margin        : 20px;
-        position      : fixed;
-        border-radius : $radius;
-        box-sizing    : initial;
-        background    : $main-color-muted;
-        transition    : .5s;
-        overflow-x    : hidden;
+        width : 90px;
 
-        &.wrapped
+        ul li
         {
-            width : 90px;
+            margin-left                : 5px;
+            border-bottom-right-radius : 0;
+            border-top-right-radius    : 0;
 
-            ul li
+            .title
             {
-                margin-left                : 5px;
-                border-bottom-right-radius : 0;
-                border-top-right-radius    : 0;
+                display : none;
+            }
 
-                .title
-                {
-                    display : none;
-                }
-
-                b:nth-child(1), b:nth-child(2)
-                {
-                    left : -5px;
-                }
+            b:nth-child(1), b:nth-child(2)
+            {
+                left : -5px;
             }
         }
+    }
 
-        ul
+    ul
+    {
+        position     : absolute;
+        top          : 0;
+        left         : 0;
+        width        : 100%;
+        padding-left : 5px;
+        padding-top  : 40px;
+
+        .list
         {
-            position     : absolute;
-            top          : 0;
-            left         : 0;
-            width        : 100%;
-            padding-left : 5px;
-            padding-top  : 40px;
+            margin-top    : 10px;
+            margin-bottom : 10px;
+            margin-left   : 15px;
+            position      : relative;
+            padding-left  : 30px;
+            list-style    : none;
+            width         : 85%;
+            border-radius : 20px;
+            transition    : .4s, width 0s;
+            z-index       : 999;
+            color         : white;
 
-            .list
+            b:nth-child(1), b:nth-child(2)
             {
-                margin-top    : 10px;
-                margin-bottom : 10px;
-                margin-left   : 15px;
-                position      : relative;
-                padding-left  : 30px;
-                list-style    : none;
-                width         : 85%;
-                border-radius : 20px;
-                transition    : .4s, width 0s;
-                z-index       : 999;
-                color         : white;
+                position   : absolute;
+                left       : -15px;
+                height     : 20px;
+                width      : 100%;
+                background : $background;
+                display    : none;
+                transition : .5s;
+
+                &::before
+                {
+                    content    : '';
+                    position   : absolute;
+                    left       : 0;
+                    width      : 100%;
+                    height     : 100%;
+                    background : $main-color-muted;
+                }
+            }
+
+            b:nth-child(1)
+            {
+                top : -20px;
+
+                &::before
+                {
+                    border-bottom-right-radius : 20px;
+                    top                        : 0;
+                }
+            }
+
+            b:nth-child(2)
+            {
+                bottom : -20px;
+
+                &::before
+                {
+                    border-top-right-radius : 20px;
+                    bottom                  : 0;
+                }
+            }
+
+            &:hover:not(.active)
+            {
+                background   : $hover;
+                margin-right : 10px;
+            }
+
+            &.active
+            {
+                width                      : 100%;
+                background                 : $background;
+                color                      : $main-color;
+                font-weight                : bold;
+                z-index                    : 1;
+                border-top-right-radius    : 0;
+                border-bottom-right-radius : 0;
 
                 b:nth-child(1), b:nth-child(2)
                 {
-                    position   : absolute;
-                    left       : -15px;
-                    height     : 20px;
-                    width      : 100%;
-                    background : $background;
-                    display    : none;
-                    transition : .5s;
-
-                    &::before
-                    {
-                        content    : '';
-                        position   : absolute;
-                        left       : 0;
-                        width      : 100%;
-                        height     : 100%;
-                        background : $main-color-muted;
-                    }
+                    display : block;
                 }
+            }
 
-                b:nth-child(1)
+            a
+            {
+                position        : relative;
+                display         : flex;
+                align-items     : center;
+                width           : 100%;
+                text-decoration : none;
+
+                .icon
                 {
-                    top : -20px;
+                    position     : relative;
+                    margin-right : 25px;
+                    display      : flex;
+                    align-items  : center;
+                    height       : 45px;
+                    line-height  : 45px;
+                    text-align   : center;
 
-                    &::before
+                    ion-icon
                     {
-                        border-bottom-right-radius : 20px;
-                        top                        : 0;
-                    }
-                }
-
-                b:nth-child(2)
-                {
-                    bottom : -20px;
-
-                    &::before
-                    {
-                        border-top-right-radius : 20px;
-                        bottom                  : 0;
-                    }
-                }
-
-                &:hover:not(.active)
-                {
-                    background   : $hover;
-                    margin-right : 10px;
-                }
-
-                &.active
-                {
-                    width                      : 100%;
-                    background                 : $background;
-                    color                      : $main-color;
-                    font-weight                : bold;
-                    z-index                    : 1;
-                    border-top-right-radius    : 0;
-                    border-bottom-right-radius : 0;
-
-                    b:nth-child(1), b:nth-child(2)
-                    {
-                        display : block;
-                    }
-                }
-
-                a
-                {
-                    position        : relative;
-                    display         : flex;
-                    align-items     : center;
-                    width           : 100%;
-                    text-decoration : none;
-
-                    .icon
-                    {
-                        position     : relative;
-                        margin-right : 25px;
-                        display      : flex;
-                        align-items  : center;
-                        height       : 45px;
-                        line-height  : 45px;
-                        text-align   : center;
-
-                        ion-icon
-                        {
-                            font-size : 1.5em;
-                        }
+                        font-size : 1.5em;
                     }
                 }
             }

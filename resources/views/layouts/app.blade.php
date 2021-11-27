@@ -7,71 +7,71 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body class="antialiased">
-        <div class="navbar-wrapper">
-            <div class="navbar">
-                <ul>
-                    <li class="list">
-                        <b></b>
-                        <b></b>
-                        <a href="{{ route('menu.index') }}">
+        <div class="navbar">
+            <ul>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="{{ route('menu.index') }}">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
-                            <span class="title">Menu</span>
-                        </a>
-                    </li>
-                    <li class="list">
-                        <b></b>
-                        <b></b>
-                        <a href="#">
+                        <span class="title">Menu</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
                         <span class="icon">
                             <ion-icon name="person-outline"></ion-icon>
                         </span>
-                            <span class="title">Profile</span>
-                        </a></li>
-                    <li class="list active">
-                        <b></b>
-                        <b></b>
-                        <a href="#">
+                        <span class="title">Profile</span>
+                    </a></li>
+                <li class="list active">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
                         <span class="icon">
                             <ion-icon name="chatbox-outline"></ion-icon>
                         </span>
-                            <span class="title">Messages</span>
-                        </a>
-                    </li>
-                    <li class="list">
-                        <b></b>
-                        <b></b>
-                        <a href="#">
+                        <span class="title">Messages</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
-                            <span class="title">Settings</span>
-                        </a></li>
-                    <li class="list">
-                        <b></b>
-                        <b></b>
-                        <a href="#">
+                        <span class="title">Settings</span>
+                    </a></li>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
                         <span class="icon">
                             <ion-icon name="help-circle-outline"></ion-icon>
                         </span>
-                            <span class="title">Help</span>
-                        </a></li>
-                    <li class="list">
-                        <b></b>
-                        <b></b>
-                        <a href="#">
+                        <span class="title">Help</span>
+                    </a></li>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
-                            <span class="title">Logout</span>
-                        </a></li>
-                </ul>
-            </div>
+                        <span class="title">Logout</span>
+                    </a></li>
+            </ul>
         </div>
         <div class="wrapper">
             <div class="toggle"></div>
-            @yield('content')
+            <div class="content">
+                @yield('content')
+            </div>
         </div>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
