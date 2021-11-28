@@ -21,6 +21,8 @@ class CreateMenuEventTable extends Migration
             $table->text('content')->nullable();
             $table->string('type')->nullable();
             $table->text('color')->nullable();
+
+            $table->bigInteger('family_id')->nullable();
         });
     }
 
