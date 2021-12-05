@@ -13,7 +13,7 @@ class CreateMenuConstraintTable extends Migration
      */
     public function up()
     {
-        Schema::create('menu_constraint', function (Blueprint $table) {
+        Schema::create('menu_constraints', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->tinyInteger('healthy_rating_min')->nullable();
@@ -30,6 +30,6 @@ class CreateMenuConstraintTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menu_constraint');
+        Schema::dropIfExists('menu_constraints');
     }
 }

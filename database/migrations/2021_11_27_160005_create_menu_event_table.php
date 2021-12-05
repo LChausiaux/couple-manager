@@ -13,7 +13,7 @@ class CreateMenuEventTable extends Migration
      */
     public function up()
     {
-        Schema::create('menu_event', function (Blueprint $table) {
+        Schema::create('menu_events', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('title')->nullable();
@@ -33,6 +33,6 @@ class CreateMenuEventTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menu_event');
+        Schema::dropIfExists('menu_events');
     }
 }

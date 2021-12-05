@@ -13,7 +13,7 @@ class CreateDishCollectionTable extends Migration
      */
     public function up()
     {
-        Schema::create('dish_collection', function (Blueprint $table) {
+        Schema::create('dishes_collections', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
@@ -28,6 +28,6 @@ class CreateDishCollectionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dish_collection');
+        Schema::dropIfExists('dishes_collections');
     }
 }

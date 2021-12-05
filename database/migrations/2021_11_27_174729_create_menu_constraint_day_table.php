@@ -13,7 +13,7 @@ class CreateMenuConstraintDayTable extends Migration
      */
     public function up()
     {
-        Schema::create('menu_constraint_day', function (Blueprint $table) {
+        Schema::create('menu_constraints_days', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->boolean('is_lunch')->nullable();
@@ -31,6 +31,6 @@ class CreateMenuConstraintDayTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menu_constraint_day');
+        Schema::dropIfExists('menu_constrainst_days');
     }
 }

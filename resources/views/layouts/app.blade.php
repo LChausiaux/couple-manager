@@ -75,6 +75,7 @@
         </div>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="{{ mix('/js/app.js') }}"></script>
         <script>
             let menuToggle = document.querySelector('.toggle');
             let navbar = document.querySelector('.navbar');
@@ -86,6 +87,7 @@
                 wrapper.classList.toggle('wrapped')
             }
         </script>
+        @stack('scripts')
     </body>
 </html>
 

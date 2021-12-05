@@ -13,7 +13,7 @@ class CreateMenuDayTable extends Migration
      */
     public function up()
     {
-        Schema::create('menu_day', function (Blueprint $table) {
+        Schema::create('menu_days', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->tinyInteger('position')->nullable();
@@ -34,6 +34,6 @@ class CreateMenuDayTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menu_day');
+        Schema::dropIfExists('menu_days');
     }
 }

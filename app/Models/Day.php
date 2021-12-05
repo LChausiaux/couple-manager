@@ -26,6 +26,8 @@ class Day extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    protected $table = 'menu_days';
+
     /**
      * The attributes that are mass assignable.
      *

@@ -13,7 +13,7 @@ class CreateDishTable extends Migration
      */
     public function up()
     {
-        Schema::create('dish', function (Blueprint $table) {
+        Schema::create('dishes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('title')->nullable();
@@ -36,6 +36,6 @@ class CreateDishTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dish');
+        Schema::dropIfExists('dishes');
     }
 }

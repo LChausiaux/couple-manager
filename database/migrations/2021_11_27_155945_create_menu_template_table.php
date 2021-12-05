@@ -13,7 +13,7 @@ class CreateMenuTemplateTable extends Migration
      */
     public function up()
     {
-        Schema::create('menu_template', function (Blueprint $table) {
+        Schema::create('menu_templates', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
@@ -28,6 +28,6 @@ class CreateMenuTemplateTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menu_template');
+        Schema::dropIfExists('menu_templates');
     }
 }

@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -21,8 +24,9 @@ use Illuminate\Support\Carbon;
  * @property string $dinner_type
  * @property int|null $parent_id
  * @property string|null $parent_type
+ * @method static Builder current()
  */
-class Dish extends Authenticatable {
+class Menu extends Authenticatable {
     use HasFactory, Notifiable;
 
     /**
@@ -31,15 +35,9 @@ class Dish extends Authenticatable {
      * @var array
      */
     protected $fillable = [
-        'title' => 'string',
-        'rating' => 'integer',
-        'is_public' => 'boolean',
-        'healthy_rating' => 'integer',
-        'leftovers' => 'boolean',
-        'sport_friendly' => 'boolean',
-        'content' => 'string',
+        'week' => 'string',
+        'year' => 'string',
         'family_id' => 'integer',
-        'collection_id' => 'integer',
     ];
 
     /**
@@ -48,27 +46,15 @@ class Dish extends Authenticatable {
      * @var array
      */
     protected $casts = [
-        'title' => 'string',
-        'rating' => 'integer',
-        'is_public' => 'boolean',
-        'healthy_rating' => 'integer',
-        'leftovers' => 'boolean',
-        'sport_friendly' => 'boolean',
-        'content' => 'string',
+        'week' => 'string',
+        'year' => 'string',
         'family_id' => 'integer',
-        'collection_id' => 'integer',
     ];
 
     protected static $rules = [
-        'title' => ['string'],
-        'rating' => ['integer'],
-        'is_public' => ['boolean'],
-        'healthy_rating' => ['integer'],
-        'leftovers' => ['boolean'],
-        'sport_friendly' => ['boolean'],
-        'content' => ['string'],
+        'week' => ['string'],
+        'year' => ['string'],
         'family_id' => ['integer'],
-        'collection_id' => ['integer'],
     ];
 
     /***** RELATIONS *****/
@@ -76,7 +62,12 @@ class Dish extends Authenticatable {
         return $this->belongsTo(Family::class);
     }
 
-    public function parent(): BelongsTo {
-        return $this->belongsTo(Collection::class);
+    public function days(): MorphMany {
+        return $this->morphMany(Day::class, 'parent');
+    }
+
+    /***** SCOPES *****/
+    public function scopeCurrent(Builder $query): Builder {
+        return $query->where('week', date('W'));
     }
 }
